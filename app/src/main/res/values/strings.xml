@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">squareBracket</string>
+    <string name="title_activity_first">MainActivity</string>
+    <string name="title_last_videos">Last Videos</string>
+    <string name="title_featured">Featured</string>
+    <string name="title_my_profile">My Profile</string>
 </resources>
