@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView lv;
 
     // URL to get contacts JSON
-    private static String url = "https://squarebracket.veselcraft.ru/api/v1/get_videos.php?limit=15";
+    private static String url = "https://squarebracket.veselcraft.ru/api/v1/get_videos.php?limit=30";
 
     ArrayList<HashMap<String, String>> contactList;
 
