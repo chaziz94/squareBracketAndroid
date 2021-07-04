@@ -21,7 +21,7 @@ public class API {
         ArrayList<HashMap<String, String>> videosList = new ArrayList<>();
         HttpHandler sh = new HttpHandler();
 
-        String jsonStr = sh.makeServiceCall("https://squarebracket.veselcraft.ru/api/v1/get_videos.php?limit=15");
+        String jsonStr = sh.makeServiceCall("https://squarebracket.veselcraft.ru/api/v1/get_videos.php?limit=30");
 
         Log.e(TAG, "Response from url: " + jsonStr);
 

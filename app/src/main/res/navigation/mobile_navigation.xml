@@ -22,4 +22,10 @@
         android:name="com.gamerappa.squarebracket.ui.notifications.NotificationsFragment"
         android:label="@string/title_my_profile"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_community"
+        android:name="com.gamerappa.squarebracket.ui.community.CommunityFragment"
+        android:label="@string/title_my_profile"
+        tools:layout="@layout/fragment_notifications" />
 </navigation>
