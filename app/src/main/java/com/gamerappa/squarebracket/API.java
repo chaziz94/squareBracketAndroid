@@ -17,13 +17,13 @@ public class API {
     String TAG = FirstActivity.class.getSimpleName();
     // TODO: Config file to server sh*t
 
-    public ArrayList<HashMap<String, String>> getLastVideos() {
+    public ArrayList<HashMap<String, String>> getLastVideos(int limit, int offset) {
         ArrayList<HashMap<String, String>> videosList = new ArrayList<>();
         HttpHandler sh = new HttpHandler();
 
-        String jsonStr = sh.makeServiceCall("https://squarebracket.veselcraft.ru/api/v1/get_videos.php?limit=30");
-
-        Log.e(TAG, "Response from url: " + jsonStr);
+        Log.d(TAG, "URL itself: " + "https://squarebracket.veselcraft.ru/api/v1/get_videos.php?limit=" + limit + "&offset=" + offset);
+        String jsonStr = sh.makeServiceCall("https://squarebracket.veselcraft.ru/api/v1/get_videos.php?limit=" + limit + "&offset=" + offset);
+        Log.d(TAG, "Response from url: " + jsonStr);
 
         if (jsonStr != null) {
             try {
