@@ -2,12 +2,10 @@ package com.gamerappa.squarebracket.ui.last_videos;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.SimpleAdapter;
@@ -19,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.gamerappa.squarebracket.R;
 import com.gamerappa.squarebracket.API;
+import com.gamerappa.squarebracket.VideoAdapter;
 import com.gamerappa.squarebracket.databinding.FragmentLastVideosBinding;
 import com.gamerappa.squarebracket.ui.EndlessScrollListener;
 
@@ -26,7 +25,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.concurrent.ExecutionException;
 
 public class lastVideosFragment extends Fragment {
 
@@ -81,11 +79,7 @@ public class lastVideosFragment extends Fragment {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-            final BaseAdapter lvadapter = new SimpleAdapter(
-                    getContext(), videosList,
-                    R.layout.list_item, new String[]{"name", "email",
-                    "mobile"}, new int[]{R.id.name,
-                    R.id.email, R.id.mobile});
+            final VideoAdapter lvadapter = new VideoAdapter(getActivity(), videosList);
 
             lv.setAdapter(lvadapter);
             lv.setVisibility(View.VISIBLE);

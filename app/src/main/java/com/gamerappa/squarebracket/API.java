@@ -15,7 +15,7 @@ import java.util.HashMap;
 public class API {
     String sharedPrefFile = "sqrconfig";
     String TAG = FirstActivity.class.getSimpleName();
-    // TODO: Config file to server sh*t
+    // TODO: Config file for server sh*t
 
     public ArrayList<HashMap<String, String>> getLastVideos(int limit, int offset) {
         ArrayList<HashMap<String, String>> videosList = new ArrayList<>();
@@ -24,6 +24,7 @@ public class API {
         Log.d(TAG, "URL itself: " + "https://squarebracket.veselcraft.ru/api/v1/get_videos.php?limit=" + limit + "&offset=" + offset);
         String jsonStr = sh.makeServiceCall("https://squarebracket.veselcraft.ru/api/v1/get_videos.php?limit=" + limit + "&offset=" + offset);
         Log.d(TAG, "Response from url: " + jsonStr);
+        // TODO: Custom URL setting for other instances
 
         if (jsonStr != null) {
             try {
@@ -45,9 +46,11 @@ public class API {
                     HashMap<String, String> video = new HashMap<>();
 
                     video.put("id", id);
-                    video.put("name", name);
-                    video.put("email", email);
-                    video.put("mobile", mobile);
+                    video.put("title", name);
+                    video.put("author", email);
+                    video.put("description", mobile);
+                    video.put("preview", "https://squarebracket.veselcraft.ru/assets/thumb/" + id + ".png");
+
 
                     // adding contact to contact list
                     videosList.add(video);
