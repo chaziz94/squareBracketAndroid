@@ -21,8 +21,8 @@ public class API {
         ArrayList<HashMap<String, String>> videosList = new ArrayList<>();
         HttpHandler sh = new HttpHandler();
 
-        Log.d(TAG, "URL itself: " + "https://squarebracket.veselcraft.ru/api/v1/get_videos.php?limit=" + limit + "&offset=" + offset);
-        String jsonStr = sh.makeServiceCall("https://squarebracket.veselcraft.ru/api/v1/get_videos.php?limit=" + limit + "&offset=" + offset);
+        Log.d(TAG, "URL itself: " + "https://sb.billyisreal.com/api/v1/get_videos.php?limit=" + limit + "&offset=" + offset);
+        String jsonStr = sh.makeServiceCall("https://sb.billyisreal.com/api/v1/get_videos.php?limit=" + limit + "&offset=" + offset);
         Log.d(TAG, "Response from url: " + jsonStr);
         // TODO: Custom URL setting for other instances
 
@@ -49,7 +49,7 @@ public class API {
                     video.put("title", name);
                     video.put("author", email);
                     video.put("description", mobile);
-                    video.put("preview", "https://squarebracket.veselcraft.ru/assets/thumb/" + id + ".png");
+                    video.put("preview", "https://sb.billyisreal.com/assets/thumb/" + id + ".png");
 
 
                     // adding contact to contact list
